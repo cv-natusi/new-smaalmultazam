@@ -220,6 +220,9 @@ $title = 'Logo';
 					<li class="{{ ($title == 'AMTV') ? 'mm-active' : ''}}">
 						<a style="color: #fff" href="{{route('main.menuUtama.amtv.main')}}"><i class="bx bx-radio-circle"></i>AMTV</a>
 					</li>
+                    <li class="{{ ($title == 'REELS') ? 'mm-active' : ''}}">
+						<a style="color: #fff" href="{{route('main.menuUtama.amtv.main')}}"><i class="bx bx-radio-circle"></i>REELS</a>
+					</li>
 				</ul>
 			</li>
 			<li class="{{ (in_array($title, ['Sejarah Singkat','Sambutan Kep.Sek','Visi Misi','Struktur Organisasi','Profil Guru','Fasilitas Sekolah'])) ? 'mm-active' : ''}}">
