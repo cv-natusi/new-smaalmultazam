@@ -221,7 +221,7 @@ $title = 'Logo';
 						<a style="color: #fff" href="{{route('main.menuUtama.amtv.main')}}"><i class="bx bx-radio-circle"></i>AMTV</a>
 					</li>
                     <li class="{{ ($title == 'REELS') ? 'mm-active' : ''}}">
-						<a style="color: #fff" href="{{route('main.menuUtama.amtv.main')}}"><i class="bx bx-radio-circle"></i>REELS</a>
+						<a style="color: #fff" href="{{route('main.menuUtama.reels.main')}}"><i class="bx bx-radio-circle"></i>REELS</a>
 					</li>
 				</ul>
 			</li>

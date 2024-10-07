@@ -78,6 +78,7 @@ use App\Http\Controllers\Elearning\Siswa\DataNilaiController;
 use App\Http\Controllers\Elearning\Siswa\MainController;
 use App\Http\Controllers\Elearning\Siswa\MateriController as SiswaMateriController;
 use App\Http\Controllers\Elearning\Siswa\UjiKompetensiController;
+use App\Http\Controllers\Main\MenuUtama\Reels\ReelsController;
 
 # END ADMIN ELEARNING > DATA MASTER
 
@@ -271,11 +272,11 @@ Route::middleware(['auth'])->group(function () {
 				Route::prefix('reels')
                 ->as('reels.')
                 ->group(function () {
-                    Route::get('/', [AmtvController::class, 'main'])->name('main');
-                    Route::post('/add', [AmtvController::class, 'add'])->name('add');
+                    Route::get('/', [ReelsController::class, 'main'])->name('main');
+                    Route::post('/add', [ReelsController::class, 'add'])->name('add');
                     Route::post('/save', [AmtvController::class, 'save'])->name('save');
-                    Route::post('/delete', [AmtvController::class, 'delete'])->name('delete');
-                    Route::post('/aktif', [AmtvController::class, 'aktif'])->name('aktif');
+                    Route::post('/delete', [ReelsController::class, 'delete'])->name('delete');
+                    Route::post('/aktif', [ReelsController::class, 'aktif'])->name('aktif');
                 });
             # END AMTV
 
