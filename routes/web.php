@@ -274,7 +274,7 @@ Route::middleware(['auth'])->group(function () {
                 ->group(function () {
                     Route::get('/', [ReelsController::class, 'main'])->name('main');
                     Route::post('/add', [ReelsController::class, 'add'])->name('add');
-                    Route::post('/save', [AmtvController::class, 'save'])->name('save');
+                    Route::post('/save', [ReelsController::class, 'save'])->name('save');
                     Route::post('/delete', [ReelsController::class, 'delete'])->name('delete');
                     Route::post('/aktif', [ReelsController::class, 'aktif'])->name('aktif');
                 });
