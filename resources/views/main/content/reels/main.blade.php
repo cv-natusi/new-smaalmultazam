@@ -30,7 +30,6 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								{{-- <th>Penerbitan</th> --}}
 								<th>Judul REELS</th>
 								<th>Link Video REELS</th>
 								<th>Status</th>
@@ -50,13 +49,13 @@
 	<script src="{{ asset('admin/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/select2/js/select2.min.js') }}"></script>
-	<script src="{{asset('admin/content/js/main-amtv.js')}}"></script>
+	<script src="{{asset('admin/content/js/main-reels.js')}}"></script>
 	<!--Sweetalert -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		var routeDatatable = "{{route('main.menuUtama.reels.main')}}"
-		var routeAmtvAdd = "{{route('main.menuUtama.reels.add')}}"
-		var routeAmtvDelete = "{{route('main.menuUtama.reels.delete')}}"
-		var routeAmtvAktif = "{{route('main.menuUtama.reels.aktif')}}"
+		var routeReelsAdd = "{{route('main.menuUtama.reels.add')}}"
+		var routeReelsDelete = "{{route('main.menuUtama.reels.delete')}}"
+		var routeReelsAktif = "{{route('main.menuUtama.reels.aktif')}}"
 	</script>
 @endpush

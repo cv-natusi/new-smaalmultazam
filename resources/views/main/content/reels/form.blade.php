@@ -2,34 +2,34 @@
 	<div class="col-12">
 		<div class="card">
 			<div class="card-header bg-main-website text-white">
-				@if (isset($amtv))
+				@if (isset($reels))
 				Edit
 				@else
 				Tambah
 				@endif
-				AMTV
+				REELS
 			</div>
 			<div class="card-body">
-				<form id="formAmtv">
-				    <input type="hidden" name="id" @isset($amtv) value="{{$amtv->id_amtv}}" @endisset>
+				<form id="formReels">
+				    <input type="hidden" name="id" @isset($reels) value="{{$reels->id_reels}}" @endisset>
 					<div class="mb-3">
-						<label for="judul_amtv" class="form-label">Judul *</label>
-						<input type="text" class="form-control" name="judul_amtv" id="judul_amtv" placeholder="Judul" @isset($amtv) value="{{$amtv->judul_amtv}}" @endisset>
+						<label for="judul_reels" class="form-label">Judul *</label>
+						<input type="text" class="form-control" name="judul_reels" id="judul_reels" placeholder="Judul" @isset($reels) value="{{$reels->judul_reels}}" @endisset>
 					</div>
 					<div class="row">
 						<div class="col-8">
 							<div class="mb-3">
-								<label for="file" class="form-label">Link Video *</label>
-								<input type="text" class="form-control" name="file" id="file" placeholder="Link Youtube" @isset($amtv) value="{{$amtv->file}}" @endisset>
+								<label for="file" class="form-label">Link Video Reels*</label>
+								<input type="text" class="form-control" name="file" id="file" placeholder="Link Reels" @isset($reels) value="{{$reels->file}}" @endisset>
 							</div>
 						</div>
 						<div class="col-4">
 							<div class="mb-3">
-								<label for="status_amtv" class="form-label">Status *</label>
-								<select name="status_amtv" id="status_amtv" class="form-control selectpicker select2">
+								<label for="status_reels" class="form-label">Status *</label>
+								<select name="status_reels" id="status_reels" class="form-control selectpicker select2">
 									<option value="">-PILIH-</option>
-									<option value="1" @isset($amtv) @if($amtv->status_amtv) selected @endif @endisset>AKTIF</option>
-									<option value="0" @isset($amtv) @if(!$amtv->status_amtv) selected @endif @endisset>TIDAK AKTIF</option>
+									<option value="1" @isset($reels) @if($reels->status_reels) selected @endif @endisset>AKTIF</option>
+									<option value="0" @isset($reels) @if(!$reels->status_reels) selected @endif @endisset>TIDAK AKTIF</option>
 								</select>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 
 	$('.btnSimpan').click((e) => {
 		e.preventDefault()
-		var data = new FormData($('#formAmtv')[0])
+		var data = new FormData($('#formReels')[0])
 		$('.btnSimpan').attr('disabled',true).html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>LOADING...')
 		$.ajax({
                 url: '{{route("main.".\Str::camel($curNav).(isset($curMenu)?".".\Str::camel(\Str::lower($curMenu)):"").".save")}}',

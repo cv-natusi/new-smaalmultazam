@@ -99,6 +99,21 @@ use App\Http\Controllers\Main\MenuUtama\Reels\ReelsController;
 |
 */
 
+Route::get('/clear-cache', function () {
+	// Artisan::call('cache:clear');
+	// Artisan::call('config:clear');
+	Artisan::call('clear-compiled');
+	// Artisan::call('cache:clear');
+	// Artisan::call('route:cache');
+	// Artisan::call('route:list');
+	// Artisan::call('config:cache');
+	// Artisan::call('view:clear');
+	// Artisan::call('optimize:clear');
+	// \Log::debug(Artisan::call('route:list'));
+	// \Log::debug("Artisan::call('optimize:clear')");
+	return "Cache cleared successfully";
+ });
+
 Route::get('/', function () {
 	return redirect()->to('beranda');
 })->name('landingPage');
@@ -114,6 +129,7 @@ Route::controller(MenuUtamaController::class)
 		Route::get('pengumuman/{id?}', 'pengumuman')->name('pengumuman');
 		Route::get('event/{id?}', 'event')->name('event');
 		Route::get('amtv', 'amtv')->name('amtv');
+		Route::get('reels', 'reels')->name('reels');
 	});
 
 Route::controller(ProfilController::class)

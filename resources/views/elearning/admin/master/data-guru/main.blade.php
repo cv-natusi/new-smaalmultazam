@@ -25,7 +25,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>NIP</th>
+								<th>NUPTK</th>
 								<th>Nama Guru</th>
 								<th>Foto Guru</th>
 								<th>Tugas Utama</th>

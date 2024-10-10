@@ -31,7 +31,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="vertical-align: baseline;padding:0"><span style="font-size: 9pt; line-height:0.7rem">NIP </span></td>
+								<td style="vertical-align: baseline;padding:0"><span style="font-size: 9pt; line-height:0.7rem">NUPTK </span></td>
 								<td style="vertical-align: baseline;padding:0; white-space:nowrap"><span>:</span></td>
 								<td style="padding: 0; width:100%"><span style="font-size: 9pt; line-height:0.7rem">{{$item->nip?$item->nip:''}}</span></td>
 							</tr>

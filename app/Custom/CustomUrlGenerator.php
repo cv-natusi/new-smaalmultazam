@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Custom;
 
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class CustomUrlGenerator extends UrlGenerator
             return parent::route($name, $parameters, $absolute);
         } catch (RouteNotFoundException $e) {
             $request = new Request;
-            if (App::environment('production')) {
+            if (App::environment('local')) {
                 // $request->merge([
                 //     "log_payload"=>[
                 //         "file" => $e,

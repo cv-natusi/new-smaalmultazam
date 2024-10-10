@@ -19,7 +19,7 @@ class LandingPageController extends Controller
 	}
 
 	public function main() {
-		$data = $this->data;
+		$data = $this->data;		
 		$data['identitas'] = Identitas::first();
 		$data['slider'] = Slider::orderByRaw('coalesce(position,100) asc')->orderBy('id_slider','DESC')->limit(10)->get();
 		$data['prestasi'] = Berita::where('kategori','5')->limit(4)->orderBy('id_berita', 'DESC')->where('status',true)->get();

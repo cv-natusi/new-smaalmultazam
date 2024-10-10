@@ -26,7 +26,7 @@ class MenuUtamaController extends Controller
 		$this->data['pathGambar'] = 'uploads/berita/';
 	}
 
-	public function beritaSekolah($id='') 
+	public function beritaSekolah($id='')
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'Berita Sekolah';
@@ -38,7 +38,7 @@ class MenuUtamaController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-	public function prestasi($id='') 
+	public function prestasi($id='')
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'Prestasi';
@@ -50,7 +50,7 @@ class MenuUtamaController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-	public function pengumuman($id='') 
+	public function pengumuman($id='')
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'Pengumuman';
@@ -62,7 +62,7 @@ class MenuUtamaController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-	public function event($id='') 
+	public function event($id='')
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'Event';
@@ -74,10 +74,18 @@ class MenuUtamaController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-	public function amtv() 
+	public function amtv()
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'AMTV';
+		$data['amtv'] = Amtv::getPaginate();
+		return view('landing-page.menu-utama',$data);
+	}
+
+    public function reels()
+	{
+		$data = $this->data;
+		$data['curMenu'] = 'REELS';
 		$data['amtv'] = Amtv::getPaginate();
 		return view('landing-page.menu-utama',$data);
 	}

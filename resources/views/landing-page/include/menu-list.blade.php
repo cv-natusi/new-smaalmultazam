@@ -48,6 +48,7 @@
 <script>
 	function menuList(menu) {
 		console.log(menu);
+
 		if('{{$curNav}}' == 'Menu Utama') {
 			var url = '{{ route('menuUtama', ':args') }}'
 		}

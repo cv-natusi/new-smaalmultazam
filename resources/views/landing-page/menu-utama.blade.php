@@ -50,7 +50,9 @@
 				@endif
 			@elseif($curMenu == 'AMTV')
 				@include('landing-page.page.amtv-page')
-			
+            @elseif($curMenu == 'REELS')
+				@include('landing-page.page.reels-page')
+
 			@elseif($curMenu == 'Sejarah Singkat')
 				@include('landing-page.page.berita-page')
 			@elseif($curMenu == 'Sambutan Kepala Sekolah')

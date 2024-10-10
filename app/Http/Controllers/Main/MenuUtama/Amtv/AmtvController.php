@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Main\MenuUtama\Amtv;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
 # MODELS
 use App\Models\Amtv;
-
 # HELPERS
 use Help, DataTables;
 

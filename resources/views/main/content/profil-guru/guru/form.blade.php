@@ -37,7 +37,7 @@ $tambah = true;
 						</div>
 						<div class="col-4">
 							<div class="mb-3">
-								<label for="nip" class="form-label">NIP</label>
+								<label for="nip" class="form-label">NUPTK</label>
 								<input type="text" class="form-control" name="nip" id="nip" placeholder="123xxxxx">
 							</div>
 						</div>

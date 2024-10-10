@@ -30,7 +30,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>NIP</th>
+								<th>NUPTK</th>
 								<th>Nama Guru</th>
 								<th>Mata Pelajaran Diampu</th>
 								<th>File Foto</th>
