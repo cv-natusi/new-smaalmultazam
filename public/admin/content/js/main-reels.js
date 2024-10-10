@@ -73,6 +73,7 @@ async function dataTable(status='') {
 }
 
 function tambahReels(id='') {
+    console.log(id)
 	$('.main-page').hide();
 	var url = routeReelsAdd
 	$.post(url, {id:id})

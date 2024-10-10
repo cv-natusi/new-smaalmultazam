@@ -10,7 +10,7 @@ use App\Models\Amtv;
 use App\Models\Berita;
 use App\Models\Identitas;
 use App\Models\Menu;
-
+use App\Models\Reels;
 # HELPERS
 use Help;
 
@@ -86,7 +86,7 @@ class MenuUtamaController extends Controller
 	{
 		$data = $this->data;
 		$data['curMenu'] = 'REELS';
-		$data['amtv'] = Amtv::getPaginate();
+		$data['reels'] = Reels::getPaginate();
 		return view('landing-page.menu-utama',$data);
 	}
 }

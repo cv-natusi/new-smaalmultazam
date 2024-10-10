@@ -12,7 +12,7 @@ use Help, DataTables;
 
 class ReelsController extends Controller
 {
-    public function main(Request $request) {    
+    public function main(Request $request) {
       $status = isset($request->status) ? $request->status : '';
       $data = Reels::orderBy('id_reels','DESC')
         ->when(($status!=''), function ($q) use ($status) {
@@ -21,7 +21,7 @@ class ReelsController extends Controller
         ->get();
         if ($request->ajax()) {
         return DataTables::of($data)->
-            addIndexColumn()->            
+            addIndexColumn()->
             addColumn('status_reels',function($row){
                 return $row->status_reels ? 'Aktif' : 'Tidak Aktif';
             })->
@@ -41,6 +41,7 @@ class ReelsController extends Controller
     }
 
     public function add(Request $request) {
+        // return $request->all();
 		$data['reels'] = Reels::find($request->id);
 		$data['curNav'] = 'Menu Utama';
 		$data['curMenu'] = 'REELS';
