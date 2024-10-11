@@ -41,7 +41,6 @@ class ReelsController extends Controller
     }
 
     public function add(Request $request) {
-        // return $request->all();
 		$data['reels'] = Reels::find($request->id);
 		$data['curNav'] = 'Menu Utama';
 		$data['curMenu'] = 'REELS';
