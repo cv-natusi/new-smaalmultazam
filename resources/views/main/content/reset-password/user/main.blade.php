@@ -18,11 +18,11 @@
 @section('content')
 <div class="row">
 	<div class="col-sm-12">
-		<div class="card">
+		<div class="card main-page">
 			<div class="card-body">
 				<div class="row mb-3">
 					<div class="col-md-3">
-						<button type="button" class="btn btn-primary" onclick="tambahPraktekBaikGuru()"><i class='bx bx-plus'></i>Tambah Baru</button>
+						{{-- <button type="button" class="btn btn-primary" onclick="tambahReels()"><i class='bx bx-plus'></i>Tambah Baru</button> --}}
 					</div>
 				</div>
 				<div class="p-1">
@@ -30,31 +30,16 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Penerbitan</th>
-								<th>Nama Guru</th>
-								<th>Judul Keterangan</th>
+								<th>Email</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>{{date('Y-m-d H:i:s')}}</td>
-								<td>Ali Nur Muhammad, S.Pd</td>
-								<td>Judul / Keteranganya</td>
-								<td>Aktif</td>
-								<td>
-									<button class="btn btn-dark btn-purple p-2"><i class='bx bx-edit-alt mx-1'></i></button>
-									<button class="btn btn-secondary p-2"><i class='bx bx-power-off mx-1'></i></button>
-									<button class="btn btn-danger p-2"><i class='bx bx-trash mx-1'></i></button>
-								</td>
-							</tr>
-						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
+		<div class="other-page"></div>
 	</div>
 </div>
 @endsection
@@ -63,10 +48,11 @@
 	<script src="{{ asset('admin/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/select2/js/select2.min.js') }}"></script>
-	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
+	<script src="{{asset('admin/content/js/main-reset-password-user.js')}}"></script>
+	<!--Sweetalert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
-		function tambahPraktekBaikGuru() {
-			window.location.href = "{{route('addPraktekBaikGuru')}}"
-		}
+		var routeDatatable = "{{route('main.resetPasswordUser.main')}}"
+		var routeResetPassword = "{{route('main.resetPasswordUser.reset')}}"
 	</script>
 @endpush

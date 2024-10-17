@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Berita;
+use App\Models\Elearning\Guru;
 use App\Models\Exkul;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -23,7 +24,7 @@ class ProgramController extends Controller
         $this->data['pathGambar'] = 'uploads/berita/';
 	}
 
-    public function programUnggulan($id='') 
+  public function programUnggulan($id='')
 	{
         $data = $this->data;
         $data['curMenu'] = 'Program Unggulan';
@@ -35,7 +36,7 @@ class ProgramController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-    public function ekstrakurikuler($id='') 
+  public function ekstrakurikuler($id='')
 	{
         $data = $this->data;
         $data['curMenu'] = 'Ekstrakurikuler';
@@ -48,7 +49,7 @@ class ProgramController extends Controller
 		return view('landing-page.menu-utama',$data);
 	}
 
-    public function praktekBaikGuru($id='') 
+  public function praktekBaikGuru($id='')
 	{
         $data = $this->data;
 		$data['curMenu'] = 'Praktek Baik Guru';
@@ -58,10 +59,14 @@ class ProgramController extends Controller
 		} else {
 			$data['berita'] = Http::get('https://learning.smaalmultazam-mjk.sch.id/api/praktek-baik-guru')->object();
 		}
+        $dataGuru = Http::get('https://learning.smaalmultazam-mjk.sch.id/api/praktek-baik-guru/')->object();
+        $data['guru'] = Guru::where('users_id',$dataGuru->data[0]->user_id)->first();
+
+        // return $data;
 		return view('landing-page.menu-utama',$data);
 	}
 
-    public function karyaSiswa($id='') 
+  public function karyaSiswa($id='')
 	{
         $data = $this->data;
         $data['curMenu'] = 'Karya Siswa';
@@ -71,6 +76,7 @@ class ProgramController extends Controller
 		} else {
 			$data['berita'] = Exkul::getPraktekBaikGuruPaginate();
 		}
+        return $data;
 		return view('landing-page.menu-utama',$data);
 	}
 }

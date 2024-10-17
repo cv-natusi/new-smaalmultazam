@@ -79,6 +79,9 @@ use App\Http\Controllers\Elearning\Siswa\MainController;
 use App\Http\Controllers\Elearning\Siswa\MateriController as SiswaMateriController;
 use App\Http\Controllers\Elearning\Siswa\UjiKompetensiController;
 use App\Http\Controllers\Main\MenuUtama\Reels\ReelsController;
+use App\Http\Controllers\Main\ResetPassword\ResetPasswordController;
+use App\Http\Controllers\Main\ResetPassword\ResetPasswordUserController;
+use Illuminate\Support\Facades\Hash;
 
 # END ADMIN ELEARNING > DATA MASTER
 
@@ -112,6 +115,10 @@ Route::get('/clear-cache', function () {
 	// \Log::debug(Artisan::call('route:list'));
 	// \Log::debug("Artisan::call('optimize:clear')");
 	return "Cache cleared successfully";
+ });
+
+ Route::get('/hash', function () {
+    return Hash::make('heru');
  });
 
 Route::get('/', function () {
@@ -294,7 +301,7 @@ Route::middleware(['auth'])->group(function () {
                     Route::post('/delete', [ReelsController::class, 'delete'])->name('delete');
                     Route::post('/aktif', [ReelsController::class, 'aktif'])->name('aktif');
                 });
-            # END AMTV
+                # END REELS
 
 			});
 
@@ -482,6 +489,24 @@ Route::middleware(['auth'])->group(function () {
 				Route::get('/', [PesanDanSaranController::class, 'main'])->name('main');
 			});
 		# END PESAN DAN SARAN
+
+        # START RESET PASSWORD
+        Route::prefix('reset-password')
+            ->as('resetPassword.')
+            ->group(function () {
+                Route::get('/', [ResetPasswordController::class, 'main'])->name('main');
+                Route::get('/store', [ResetPasswordController::class, 'store'])->name('store');
+            });
+        # END RESET PASSWORD
+
+        # START RESET PASSWORD USER
+        Route::prefix('reset-password-user')
+            ->as('resetPasswordUser.')
+            ->group(function () {
+                Route::get('/', [ResetPasswordUserController::class, 'main'])->name('main');
+                Route::post('/reset', [ResetPasswordUserController::class, 'resetPassword'])->name('reset');
+            });
+        # END RESET PASSWORD USER
 	});
 	# END MIDDLEWARE ADMINISTRATOR
 
@@ -701,10 +726,10 @@ Route::middleware(['auth'])->group(function () {
 // 		Route::get('/', [testingController::class, 'ekstrakulikuler'])->name('ekstrakulikuler');
 // 		Route::get('/add', [testingController::class, 'addEkstrakulikuler'])->name('addEkstrakulikuler');
 // 	});
-// 	Route::group(['prefix' => 'praktek-baik-guru'], function() {
-// 		Route::get('/', [testingController::class, 'praktekBaikGuru'])->name('praktekBaikGuru');
-// 		Route::get('/add', [testingController::class, 'addPraktekBaikGuru'])->name('addPraktekBaikGuru');
-// 	});
+// Route::group(['prefix' => 'praktek-baik-guru'], function() {
+// 	Route::get('/', [testingController::class, 'praktekBaikGuru'])->name('praktekBaikGuru');
+// 	Route::get('/add', [testingController::class, 'addPraktekBaikGuru'])->name('addPraktekBaikGuru');
+// });
 // 	Route::group(['prefix' => 'karya-siswa'], function() {
 // 		Route::get('/', [testingController::class, 'karyaSiswa'])->name('karyaSiswa');
 // 		Route::get('/add', [testingController::class, 'addKaryaSiswa'])->name('addKaryaSiswa');

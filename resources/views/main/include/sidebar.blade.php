@@ -333,6 +333,24 @@ $title = 'Logo';
 					<div class="menu-title">Pesan dan Saran</div>
 				</a>
 			</li>
+            <li class="menu-label">Pengaturan</li>
+			<li class="{{ ($title == 'Alumni') ? 'mm-active' : ''}}">
+				<a href="{{route('main.resetPassword.main')}}">
+
+					<div class="parent-icon">
+						<i style="color: #fff" class='bx bx-cog'></i>
+					</div>
+					<div class="menu-title">Reset Password</div>
+				</a>
+			</li>
+            <li class="{{ ($title == 'Alumni') ? 'mm-active' : ''}}">
+				<a href="{{route('main.resetPasswordUser.main')}}">
+					<div class="parent-icon">
+						<i style="color: #fff" class='bx bx-cog'></i>
+					</div>
+					<div class="menu-title">Reset Password User</div>
+				</a>
+			</li>
 		@endif
 		@endauth
 	</ul>
