@@ -66,7 +66,8 @@
 	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
 	<script>
 		function tambahKaryaSiswa() {
-			window.location.href = "{{route('addKaryaSiswa')}}"
+			// window.location.href = "{{route('addKaryaSiswa')}}"
+			window.location.href = "{{route('main.programSekolah.karyaSiswa.add')}}"
 		}
 	</script>
 @endpush
