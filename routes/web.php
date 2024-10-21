@@ -411,7 +411,8 @@ Route::middleware(['auth'])->group(function () {
 					->as('karyaSiswa.')
 					->group(function () {
 						Route::get('/', [KaryaSiswaController::class, 'main'])->name('main');
-						Route::get('/add', [KaryaSiswaController::class, 'add'])->name('add');
+						Route::post('/add', [KaryaSiswaController::class, 'add'])->name('add');
+						Route::post('/store', [KaryaSiswaController::class, 'store'])->name('store');
 					});
 				# END KARYA SISWA
 

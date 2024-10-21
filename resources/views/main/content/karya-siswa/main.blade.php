@@ -18,7 +18,7 @@
 @section('content')
 <div class="row">
 	<div class="col-sm-12">
-		<div class="card">
+		<div class="card main-page">
 			<div class="card-body">
 				<div class="row mb-3">
 					<div class="col-md-3">
@@ -37,7 +37,7 @@
 								<th>Aksi</th>
 							</tr>
 						</thead>
-						<tbody>
+						{{-- <tbody>
 							<tr>
 								<td>1</td>
 								<td>{{date('Y-m-d H:i:s')}}</td>
@@ -50,11 +50,12 @@
 									<button class="btn btn-danger p-2"><i class='bx bx-trash mx-1'></i></button>
 								</td>
 							</tr>
-						</tbody>
+						</tbody> --}}
 					</table>
 				</div>
 			</div>
 		</div>
+        <div class="other-page"></div>
 	</div>
 </div>
 @endsection
@@ -63,11 +64,16 @@
 	<script src="{{ asset('admin/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+	<script src="{{ asset('admin/assets/js/ckeditor1/ckeditor.js') }}"></script>
+	<script src="{{ asset('admin/assets/js/ckeditor1/adapters/jquery.js') }}"></script>
+	<script src="{{asset('admin/content/js/main-karya-siswa.js')}}"></script>
 	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
 	<script>
-		function tambahKaryaSiswa() {
-			// window.location.href = "{{route('addKaryaSiswa')}}"
-			window.location.href = "{{route('main.programSekolah.karyaSiswa.add')}}"
-		}
+        var routeDatatable = "{{route('main.programSekolah.karyaSiswa.main')}}"
+        var routeAddKarya = "{{route('main.programSekolah.karyaSiswa.add')}}"
+		// function tambahKaryaSiswa() {
+		// 	// window.location.href = "{{route('addKaryaSiswa')}}"
+		// 	window.location.href = "{{route('main.programSekolah.karyaSiswa.add')}}"
+		// }
 	</script>
 @endpush

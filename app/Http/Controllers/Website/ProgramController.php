@@ -76,7 +76,6 @@ class ProgramController extends Controller
 		} else {
 			$data['berita'] = Exkul::getPraktekBaikGuruPaginate();
 		}
-        return $data;
 		return view('landing-page.menu-utama',$data);
 	}
 }
