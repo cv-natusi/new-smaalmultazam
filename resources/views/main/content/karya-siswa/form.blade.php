@@ -54,9 +54,8 @@
                         <a class="pan" id="btnOutPut" data-big="@isset($data){!! url('uploads/karya/'.$data->gambar) !!}@endisset">
                             <img id="outPut" @isset($data) src="{!! url('uploads/karya/'.$data->gambar) !!}" @endisset class="rounded mx-auto d-block responsive @isset($data) img-thumbnail w-50 @endisset">
                         </a>
-                        @if(!empty($data->gambar))
-                            <img id="preview-photo" src="{!! url('uploads/karya/'.$data->gambar) !!}" class="img-polaroid" width="100" height="101">
-                        @else
+                        @if(empty($data->gambar))
+                            {{-- <img id="preview-photo" src="{!! url('uploads/karya/'.$data->gambar) !!}" class="img-polaroid" width="100" height="101"> --}}
                             <img id="preview-photo" src="{!! url('uploads/default.jpg') !!}" class="img-polaroid" width="100" height="101">
                         @endif
                     </center>
