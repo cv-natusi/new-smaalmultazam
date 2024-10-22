@@ -70,11 +70,11 @@ class ProgramController extends Controller
 	{
         $data = $this->data;
         $data['curMenu'] = 'Karya Siswa';
-        $data['pathGambar'] = 'uploads/exkul/';
+        $data['pathGambar'] = 'uploads/karya/';
 		if($id) {
-			$data['detail'] = Exkul::getPraktekBaikGuruDetail($id);
+			$data['detail'] = Berita::getKaryaSiswaDetail($id);
 		} else {
-			$data['berita'] = Exkul::getPraktekBaikGuruPaginate();
+			$data['berita'] = Berita::getKaryaSiswaPaginate();
 		}
 		return view('landing-page.menu-utama',$data);
 	}

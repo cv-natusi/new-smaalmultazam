@@ -83,6 +83,20 @@ class Berita extends Model
 			->first();
 	}
 
+    public static function getKaryaSiswaPaginate(){
+		return Berita::where('kategori', 6)
+			->where('status', true)
+			->orderBy('tanggal', 'DESC')
+			->paginate(8);
+	}
+
+	public static function getKaryaSiswaDetail($id) {
+		return Berita::where('id_berita',$id)
+			->where('kategori', 6)
+			->where('status', true)
+			->first();
+	}
+
     public function siswa() {
         return $this->belongsTo(Siswa::class, 'siswa_id');
     }

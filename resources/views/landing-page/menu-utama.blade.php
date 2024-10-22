@@ -85,9 +85,12 @@
 					@include('landing-page.page.praktek-list')
 				@endif
 			@elseif($curMenu == 'Karya Siswa')
-				@include('landing-page.page.berita-list')
-			@else($curMenu == 'UKS')
-				@include('landing-page.page.berita-page')
+                @if(isset($detail))
+                    @include('landing-page.page.berita-page')
+                @else
+			{{-- @else($curMenu == 'UKS') --}}
+                    @include('landing-page.page.berita-list')
+                @endif
 			@endif
 		</div>
 	</div>
