@@ -132,7 +132,7 @@ class KaryaSiswaController extends Controller
                     $file1=$_FILES['foto']['name'];
                     $ext_foto1 = $request->file_gambar->getClientOriginalExtension();
                     if(!empty($file1)){
-                        $direktori1='uploads/karya/'; //tempat upload foto
+                        $direktori1='uploads/karya/'; // tempat upload foto
                         $name1='foto'; //name pada input type file
                         $namaBaru1="Berita-".date('Ymd-His'); //name pada input type file
                         $quality1=50; //konversi kualitas gambar dalam satuan %
@@ -150,7 +150,7 @@ class KaryaSiswaController extends Controller
 						$ext_file = $value->getClientOriginalExtension();
 						$nama_file = $value->getClientOriginalName();
 						$filename1 = "Karya" . date('Ymd-His') . "_" . $key . "." . $ext_file;
-						$temp_foto1 = 'uploads/karya/';
+						$temp_foto1 = 'uploads/karya_file/'; # Tempat simpan file pdf
 						$proses1 = $value->move($temp_foto1, $filename1);
 						$karyaFile->berita_id = $karya->id_berita;
 						$karyaFile->original_name = $nama_file;
@@ -163,8 +163,8 @@ class KaryaSiswaController extends Controller
 				}
                 if (!empty($request->id)) {
 					foreach ($pbgFileGet as $key => $value) {
-						if (file_exists('uploads/karya/' . $value->file_name)) {
-							unlink('uploads/karya/' . $value->file_name);
+						if (file_exists('uploads/karya_file/' . $value->file_name)) {
+							unlink('uploads/karya_file/' . $value->file_name);
 						}
 					}
 				}
