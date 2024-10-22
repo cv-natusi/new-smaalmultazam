@@ -20,7 +20,7 @@ class CustomUrlGenerator extends UrlGenerator
             return parent::route($name, $parameters, $absolute);
         } catch (RouteNotFoundException $e) {
             $request = new Request;
-            if (App::environment('local')) {
+            if (App::environment('production')) {
                 // $request->merge([
                 //     "log_payload"=>[
                 //         "file" => $e,
