@@ -68,9 +68,13 @@
 	<script src="{{ asset('admin/assets/js/ckeditor1/adapters/jquery.js') }}"></script>
 	<script src="{{asset('admin/content/js/main-karya-siswa.js')}}"></script>
 	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
+    <!--Sweetalert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
         var routeDatatable = "{{route('main.programSekolah.karyaSiswa.main')}}"
         var routeAddKarya = "{{route('main.programSekolah.karyaSiswa.add')}}"
+        var routeKaryaAktif = "{{route('main.programSekolah.karyaSiswa.aktif')}}"
+        var routeKaryaDelete = "{{route('main.programSekolah.karyaSiswa.delete')}}"
 		// function tambahKaryaSiswa() {
 		// 	// window.location.href = "{{route('addKaryaSiswa')}}"
 		// 	window.location.href = "{{route('main.programSekolah.karyaSiswa.add')}}"

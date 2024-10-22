@@ -413,6 +413,9 @@ Route::middleware(['auth'])->group(function () {
 						Route::get('/', [KaryaSiswaController::class, 'main'])->name('main');
 						Route::post('/add', [KaryaSiswaController::class, 'add'])->name('add');
 						Route::post('/store', [KaryaSiswaController::class, 'store'])->name('store');
+						Route::post('/aktif', [KaryaSiswaController::class, 'aktif'])->name('aktif');
+						Route::post('/delete', [KaryaSiswaController::class, 'delete'])->name('delete');
+						Route::get('/downloadFile/{id?}', [KaryaSiswaController::class, 'downloadFile'])->name('downloadFile');
 					});
 				# END KARYA SISWA
 

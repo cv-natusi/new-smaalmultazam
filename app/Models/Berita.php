@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Elearning\Siswa;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -81,4 +82,12 @@ class Berita extends Model
 			->where('status', true)
 			->first();
 	}
+
+    public function siswa() {
+        return $this->belongsTo(Siswa::class, 'siswa_id');
+    }
+
+    public function karya_siswa_file() {
+        return $this->hasMany(KaryaSiswaFile::class, 'berita_id', 'id_berita');
+    }
 }

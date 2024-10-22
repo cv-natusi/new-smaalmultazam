@@ -50,9 +50,9 @@ async function dataTable(status='') {
 			{data:'DT_RowIndex', name:'DT_RowIndex', render: (data, type, row)=>{
 				return `<p class="m-0 p-1">${data}</p>`
 			}},
-			{data:'penerbitan', name:'penerbitan'},
+			{data:'tanggal', name:'tanggal'},
+			{data:'siswa.nama', name:'siswa.nama'},
 			{data:'judul', name:'judul'},
-			{data:'status', name:'status'},
 			{data:'status', name:'status'},
 			{data:'actions', name:'actions'}
 		],
@@ -88,4 +88,94 @@ function tambahKaryaSiswa(id='') {
 		$('.other-page').empty();
 		$('.main-page').show();
 	})
+}
+
+function aktifKarya(id) {
+	var url = routeKaryaAktif
+	$.post(url, {id:id})
+	.done(function(data){
+		console.log(data);
+		if(data.code == 200){
+			Swal.fire({
+				icon: 'success',
+				title: 'Berhasil',
+				text: data.message,
+				showConfirmButton: false,
+				timer: 1200
+			})
+			setTimeout(async ()=>{
+				await dataTable($('#status').val())
+				// $('#dataTabel').DataTable().ajax.reload()
+				// location.reload()
+			}, 1100);
+		} else {
+			Swal.fire({
+				icon: 'warning',
+				title: 'Whoops',
+				text: data.message,
+				showConfirmButton: false,
+				timer: 1300,
+			})
+		}
+	})
+	.fail(() => {
+		Swal.fire({
+			icon: 'error',
+			title: 'Whoops..',
+			text: 'Terjadi kesalahan silahkan ulangi kembali',
+			showConfirmButton: false,
+			timer: 1300,
+		})
+	})
+}
+
+function hapusKarya(id) {
+	Swal.fire({
+		title: "Apakah Anda Yakin?",
+		text: "Data Tersebut Akan Dihapus!",
+		icon: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#3085d6",
+		cancelButtonColor: "#d33",
+		confirmButtonText: "Ya, Hapus!"
+	}).then((result) => {
+		if (result.isConfirmed) {
+			var url = routeKaryaDelete
+			$.post(url, {id:id})
+			.done(function(data){
+				console.log(data);
+				if(data.code == 200){
+					Swal.fire({
+						icon: 'success',
+						title: 'Berhasil',
+						text: data.message,
+						showConfirmButton: false,
+						timer: 1200
+					})
+					setTimeout(async ()=>{
+						await dataTable($('#status').val())
+						// $('#dataTabel').DataTable().ajax.reload()
+						// location.reload()
+					}, 1100);
+				} else {
+					Swal.fire({
+						icon: 'warning',
+						title: 'Whoops',
+						text: data.message,
+						showConfirmButton: false,
+						timer: 1300,
+					})
+				}
+			})
+			.fail(() => {
+				Swal.fire({
+					icon: 'error',
+					title: 'Whoops..',
+					text: 'Terjadi kesalahan silahkan ulangi kembali',
+					showConfirmButton: false,
+					timer: 1300,
+				})
+			})
+		}
+	});
 }
