@@ -76,7 +76,6 @@
         var routeKaryaAktif = "{{route('main.programSekolah.karyaSiswa.aktif')}}"
         var routeKaryaDelete = "{{route('main.programSekolah.karyaSiswa.delete')}}"
 		// function tambahKaryaSiswa() {
-		// 	// window.location.href = "{{route('addKaryaSiswa')}}"
 		// 	window.location.href = "{{route('main.programSekolah.karyaSiswa.add')}}"
 		// }
 	</script>
