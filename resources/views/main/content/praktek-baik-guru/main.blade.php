@@ -64,9 +64,9 @@
 	<script src="{{ asset('admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/select2/js/select2.min.js') }}"></script>
 	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
+			{{-- // window.location.href = "{{route('addPraktekBaikGuru')}}" --}}
 	<script>
 		function tambahPraktekBaikGuru() {
-			// window.location.href = "{{route('addPraktekBaikGuru')}}"
 		}
 	</script>
 @endpush
