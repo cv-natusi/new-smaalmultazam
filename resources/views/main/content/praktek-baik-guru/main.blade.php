@@ -66,7 +66,7 @@
 	{{-- <script src="{{asset('admin/content/js/main-agenda.js')}}"></script> --}}
 	<script>
 		function tambahPraktekBaikGuru() {
-			window.location.href = "{{route('addPraktekBaikGuru')}}"
+			// window.location.href = "{{route('addPraktekBaikGuru')}}"
 		}
 	</script>
 @endpush
