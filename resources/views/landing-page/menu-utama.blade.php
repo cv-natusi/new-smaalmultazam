@@ -50,7 +50,7 @@
 				@endif
 			@elseif($curMenu == 'AMTV')
 				@include('landing-page.page.amtv-page')
-            @elseif($curMenu == 'REELS')
+            @elseif($curMenu == 'Reals Instagram')
 				@include('landing-page.page.reels-page')
 
 			@elseif($curMenu == 'Sejarah Singkat')

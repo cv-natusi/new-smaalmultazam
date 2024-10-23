@@ -85,7 +85,7 @@ class MenuUtamaController extends Controller
     public function reels()
 	{
 		$data = $this->data;
-		$data['curMenu'] = 'REELS';
+		$data['curMenu'] = 'Reals Instagram';
 		$data['reels'] = Reels::getPaginate();
 		return view('landing-page.menu-utama',$data);
 	}

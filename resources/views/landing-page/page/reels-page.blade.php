@@ -22,7 +22,7 @@
 		</div>
 	@endforeach
 </div>
-<ul class="pagination-area justify-content-center pt-2">
+<ul class="paginatioxn-area justify-content-center pt-2">
 <script src="{{asset('assets/js/pagination.js')}}"></script>
 <script>
 	// var pageUrl, prevUrl, nextUrl = '';
