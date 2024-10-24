@@ -136,7 +136,7 @@ Route::controller(MenuUtamaController::class)
 		Route::get('pengumuman/{id?}', 'pengumuman')->name('pengumuman');
 		Route::get('event/{id?}', 'event')->name('event');
 		Route::get('amtv', 'amtv')->name('amtv');
-		Route::get('reels', 'reels')->name('reels');
+		Route::get('reels', 'reels')->name('realsInstagram');
 	});
 
 Route::controller(ProfilController::class)

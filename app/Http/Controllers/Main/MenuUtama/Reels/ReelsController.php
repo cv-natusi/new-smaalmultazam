@@ -43,7 +43,7 @@ class ReelsController extends Controller
     public function add(Request $request) {
 		$data['reels'] = Reels::find($request->id);
 		$data['curNav'] = 'Menu Utama';
-		$data['curMenu'] = 'REELS';
+		$data['curMenu'] = 'Reals Instagram';
 		$content = view('main.content.reels.form',$data)->render();
 		return ['status' => 'success', 'content' => $content];
 	}
