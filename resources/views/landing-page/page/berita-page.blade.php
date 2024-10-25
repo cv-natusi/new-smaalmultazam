@@ -2,16 +2,19 @@
     <div class="title  spacer p-top-xs p-bottom-xs">
         <h3 class="font-weight-bold">{{$detail->judul}}</h3>
     </div>
-    {{-- @dd($curMenu); --}}
+    {{-- @dd($detail); --}}
+    @php
+        $url = 'https://learning.smaalmultazam-mjk.sch.id/';
+    @endphp
     @if ($curMenu =='Praktek Baik Guru')
     <div class="img object-fit">
         <div class="object-fit-cover">
             {{-- <img src="http://localhost/elearning-smaalmultazam/public/{{$pathGambar.$detail->gambar}}" alt="Assessing the Maturity of Your Data Management in Industry"> --}}
             {{-- <img src="{{ asset($pathGambar.$detail->gambar)}}" alt="Assessing the Maturity of Your Data Management in Industry"> --}}
             @if (!empty($detail->praktek_baik_guru_gambar))
-                <img src="{{ asset($pathGambar.'gambar'.$detail->praktek_baik_guru_gambar->file_name) }}" alt="Assessing the Maturity of Your Data Management in Industry">
+                <img src="{{ $url.$pathGambar.$detail->praktek_baik_guru_gambar->file_name }}" alt="Assessing the Maturity of Your Data Management in Industry">
             @else
-                <img src="{{ asset('uploads/default.jpg') }}" alt="Gambar Tidak Ditemukan" style="width: 100px; height: 100px;">
+                <img src="{{ asset('uploads/default.jpg') }}" alt="Gambar Tidak Ditemukan">
             @endif
         </div>
     </div>

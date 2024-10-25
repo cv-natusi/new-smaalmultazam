@@ -53,7 +53,7 @@ class ProgramController extends Controller
 	{
         $data = $this->data;
 		$data['curMenu'] = 'Praktek Baik Guru';
-		$data['pathGambar'] = 'uploads/praktek/';
+		$data['pathGambar'] = 'uploads/praktek/gambar/';
 		if($id) {
 			$data['detail'] = Http::get('https://learning.smaalmultazam-mjk.sch.id/api/praktek-baik-guru/'.$id)->object();
 		} else {
@@ -62,7 +62,7 @@ class ProgramController extends Controller
         $dataGuru = Http::get('https://learning.smaalmultazam-mjk.sch.id/api/praktek-baik-guru/')->object();
         $data['guru'] = Guru::where('users_id',$dataGuru->data[0]->user_id)->first();
 
-        // return $data;
+        // return $data['pathGambar'];
 		return view('landing-page.menu-utama',$data);
 	}
 
