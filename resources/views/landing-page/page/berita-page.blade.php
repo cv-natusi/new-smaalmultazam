@@ -7,8 +7,12 @@
     <div class="img object-fit">
         <div class="object-fit-cover">
             {{-- <img src="http://localhost/elearning-smaalmultazam/public/{{$pathGambar.$detail->gambar}}" alt="Assessing the Maturity of Your Data Management in Industry"> --}}
-            <img src="{{ asset($pathGambar.$detail->gambar)}}" alt="Assessing the Maturity of Your Data Management in Industry">
-            {{-- <img src="{{ asset('uploads/galeri/Galeri-20240228-154848.jpg') }}"> --}}
+            {{-- <img src="{{ asset($pathGambar.$detail->gambar)}}" alt="Assessing the Maturity of Your Data Management in Industry"> --}}
+            @if (!empty($detail->praktek_baik_guru_gambar))
+                <img src="{{ asset($pathGambar.'gambar'.$detail->praktek_baik_guru_gambar->file_name) }}" alt="Assessing the Maturity of Your Data Management in Industry">
+            @else
+                <img src="{{ asset('uploads/default.jpg') }}" alt="Gambar Tidak Ditemukan" style="width: 100px; height: 100px;">
+            @endif
         </div>
     </div>
     @endif
