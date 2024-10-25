@@ -115,7 +115,7 @@ class KaryaSiswaController extends Controller
 				$pbgFileGet = $pbgFile->get();
 				$pbgFileDelete = $pbgFile->delete();
 			}
-            if (!empty($request->file_gambar)) {
+            if (!empty($request->file_gambar)) { # SIMPAN GAMBAR
                 if(!empty($request->id) && $karya->gambar!=''){
                     if(file_exists('uploads/karya/'.$karya->gambar)){
                         unlink('uploads/karya/'.$karya->gambar);
@@ -142,7 +142,7 @@ class KaryaSiswaController extends Controller
                 }
             }
             $karya->save();
-            if($karya) {
+            if($karya) { # SIMPAN FILE
                 if (!empty($request->file)) {
 					foreach ($request->file as $key => $value) {
 						$karyaFile = new KaryaSiswaFile;

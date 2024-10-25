@@ -1,6 +1,7 @@
 <div class="p-top-sm spacer title font-nunito ">
 	<h4 class="font-weight-bold">{{$curMenu}}</h4>
 </div>
+{{-- @dd($curMenu); --}}
 <div class="p-top-sm spacer">
 	<ul class="list-unstyled items berita-area">
 		@php

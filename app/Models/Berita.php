@@ -13,6 +13,14 @@ class Berita extends Model
 	protected $primaryKey = "id_berita";
 	public $timestamps = false;
 
+    public function siswa() {
+        return $this->belongsTo(Siswa::class, 'siswa_id');
+    }
+
+    public function karya_siswa_file() {
+        return $this->hasMany(KaryaSiswaFile::class, 'berita_id','id_berita');
+    }
+
 	public static function getBeritaPaginate(){
 		return Berita::where('kategori', 1)
 			->where('status', true)
@@ -92,16 +100,9 @@ class Berita extends Model
 
 	public static function getKaryaSiswaDetail($id) {
 		return Berita::where('id_berita',$id)
+            ->with('karya_siswa_file')
 			->where('kategori', 6)
 			->where('status', true)
 			->first();
 	}
-
-    public function siswa() {
-        return $this->belongsTo(Siswa::class, 'siswa_id');
-    }
-
-    public function karya_siswa_file() {
-        return $this->hasMany(KaryaSiswaFile::class, 'berita_id', 'id_berita');
-    }
 }
