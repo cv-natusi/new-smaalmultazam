@@ -44,22 +44,3 @@
 		</div>
 	</div>
 </div>
-@push('script')
-<script>
-	function menuList(menu) {
-		console.log(menu);
-
-		if('{{$curNav}}' == 'Menu Utama') {
-			var url = '{{ route('menuUtama', ':args') }}'
-		}
-		if('{{$curNav}}' == 'Profil') {
-			var url = '{{ route('profil', ':args') }}'
-		}
-		if('{{$curNav}}' == 'Program') {
-			var url = '{{ route('program', ':args') }}'
-		}
-		url = url.replace(':args',menu)
-		window.location.href = url
-	}
-</script>
-@endpush
